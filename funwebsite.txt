@@ -1,5 +1,7 @@
 A free birthday website is a great beginner project. You can build it entirely for free and host it on a free service that gives you a public URL.
-
+shaggy
+git same
+Gh_pass_4_z...
 Here's a straightforward approach using **HTML + CSS + JavaScript** and **GitHub Pages**.
 
 ## Step 1: Decide what you want

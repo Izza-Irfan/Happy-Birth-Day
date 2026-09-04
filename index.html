@@ -1,20 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Happy Birthday!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zara! 🎂</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>🎉 Happy Birthday Zara! 🎂</h1>
+    <!-- Floating balloons -->
+    <div class="balloons">
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+    </div>
 
-<p>Wishing you happiness, success, and lots of cake!</p>
+    <!-- Sparkles -->
+    <div class="sparkles">✨ ✨ ✨ ✨ ✨</div>
 
-<button onclick="showMessage()">Click Me!</button>
+    <main>
 
-<p id="message"></p>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>🎉 Happy Birthday, Zara! 🎂</h1>
 
-<script src="script.js"></script>
+            <p class="typing" id="typing"></p>
+
+            <button onclick="startCelebration()">
+                🎁 Open Your Surprise
+            </button>
+        </section>
+
+        <!-- Countdown -->
+        <section class="card">
+            <h2>🎂 Birthday Countdown</h2>
+            <div id="countdown">
+                Loading...
+            </div>
+        </section>
+
+        <!-- Gift -->
+        <section class="card gift-section">
+            <h2>🎁 A Special Gift</h2>
+
+            <div class="gift" id="gift" onclick="openGift()">
+                🎁
+            </div>
+
+            <p id="giftMessage">
+                Tap the gift!
+            </p>
+        </section>
+
+        <!-- Photo slideshow -->
+        <section class="card">
+            <h2>📷 Beautiful Memories</h2>
+
+            <div class="slideshow">
+                <img id="slideImage"
+                     src="images/photo1.jpg"
+                     alt="Birthday memory">
+
+                <button class="prev" onclick="previousSlide()">❮</button>
+                <button class="next" onclick="nextSlide()">❯</button>
+            </div>
+
+            <div id="slideCaption">
+                Beautiful memory ❤️
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section class="card">
+            <h2>🎥 Birthday Video</h2>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/watch?v=28eF7dKN91g&list=RD28eF7dKN91g&start_radio=1"
+                    title="Birthday video"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Music -->
+        <section class="card">
+            <h2>🎵 Birthday Music</h2>
+
+            <audio id="birthdayMusic" loop>
+                <source src="images/birthday-music.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+            <button onclick="toggleMusic()" id="musicButton">
+                ▶️ Play Music
+            </button>
+        </section>
+
+        <!-- Timeline -->
+        <section class="card timeline-section">
+            <h2>📜 Our Memories</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">❤️</div>
+                    <div>
+                        <h3>2019</h3>
+                        <p>The beginning of a beautiful memory.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">✨</div>
+                    <div>
+                        <h3>2021</h3>
+                        <p>So many wonderful moments together.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">🎉</div>
+                    <div>
+                        <h3>2024</h3>
+                        <p>Another year filled with happiness.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">🎂</div>
+                    <div>
+                        <h3>2026</h3>
+                        <p>Celebrating another amazing birthday!</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Letter -->
+        <section class="card letter">
+            <h2>💌 A Letter For You</h2>
+
+            <p>
+                Princess Zara,
+            </p>
+
+            <p>
+                Today is all about celebrating you. You bring so much
+                happiness, kindness, and laughter into the lives of
+                everyone around you.
+            </p>
+
+            <p>
+                I hope this birthday brings you beautiful memories,
+                exciting adventures, and everything you've been wishing for.
+            </p>
+
+            <p>
+                Never stop being the wonderful person you are.
+            </p>
+
+            <p>
+                Happy Birthday! ❤️🎂
+            </p>
+
+            <p>
+                With lots of best wishes,
+                <br>
+                 Ek door ka dost 
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Fireworks canvas -->
+    <canvas id="fireworks"></canvas>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
