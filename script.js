@@ -180,19 +180,19 @@ function launchConfetti() {
 
 const photos = [
     {
-        src: "images/photo1.jpg",
+        src: "images/Photo1.jpg",
         caption: "A beautiful memory ❤️"
     },
     {
-        src: "images/photo2.jpg",
+        src: "images/Photo2.jpg",
         caption: "Always smiling! 😊"
     },
     {
-        src: "images/photo3.jpg",
+        src: "images/Photo3.jpg",
         caption: "One of my favorite moments ✨"
     },
     {
-        src: "images/photo4.jpg",
+        src: "images/Photo4.jpg",
         caption: "Memories we will never forget 💖"
     }
 ];
