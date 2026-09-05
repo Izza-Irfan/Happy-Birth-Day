@@ -36,7 +36,7 @@ typeText();
 
 // Change this date if needed.
 const birthdayDate =
-    new Date("September 05, 2026 16:33:00").getTime();
+    new Date("September 08, 2026 00:00:00").getTime();
 
 function updateCountdown() {
 
