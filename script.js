@@ -3,7 +3,7 @@
 ========================================= */
 
 const typingText =
-    "Wishing you happiness, love, success, and lots of cake! 🎂❤️";
+    "May your journey ahead be as beautiful, extraordinary, and unforgettable as you are 🎂🤍";
 
 let typingIndex = 0;
 
@@ -39,7 +39,7 @@ function updateCountdown() {
     if (difference <= 0) {
 
         document.getElementById("countdown").innerHTML =
-            "🎉 HAPPY BIRTHDAY! 🎂❤️";
+            "🎉 HAPPY BIRTHDAY! 🎉🎂🤍";
 
         return;
     }
@@ -85,7 +85,7 @@ function openGift() {
     gift.classList.add("open");
 
     document.getElementById("giftMessage").innerHTML =
-        "🎉 Surprise! You deserve all the happiness in the world! ❤️";
+        "🎉 Surprise! You deserve all the happiness in the world! 🤍";
 
     launchConfetti();
 }
