@@ -2,6 +2,7 @@ A free birthday website is a great beginner project. You can build it entirely f
 shaggy
 git same
 Gh_pass_4_z...
+3 feb
 Here's a straightforward approach using **HTML + CSS + JavaScript** and **GitHub Pages**.
 
 ## Step 1: Decide what you want
