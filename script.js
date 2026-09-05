@@ -181,19 +181,19 @@ function launchConfetti() {
 const photos = [
     {
         src: "images/Photo1.jpg",
-        caption: "A beautiful memory ❤️"
+        caption: "The Girl Who Makes Everything Brighter ✨"
     },
     {
         src: "images/Photo2.jpg",
-        caption: "Always smiling! 😊"
+        caption: "Virgo Queen 👑"
     },
     {
         src: "images/Photo3.jpg",
-        caption: "One of my favorite moments ✨"
+        caption: "One of a Kind, The Beautiful Soul Behind That Tough Exterior 💎"
     },
     {
         src: "images/Photo4.jpg",
-        caption: "Memories we will never forget 💖"
+        caption: "My King My Love 💖"
     }
 ];
 
