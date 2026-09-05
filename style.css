@@ -27,6 +27,10 @@ body {
     overflow-x: hidden;
 }
 
+/* =========================================
+   BACKGROUND
+========================================= */
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -48,7 +52,9 @@ main {
     padding: 30px 20px;
 }
 
-/* Hero */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
     min-height: 90vh;
@@ -66,7 +72,8 @@ main {
 
     text-shadow:
         0 0 10px #ff4f81,
-        0 0 20px #ff4f81;
+        0 0 20px #ff4f81,
+        0 0 40px rgba(255, 79, 129, 0.5);
 
     animation: heartbeat 2s infinite;
 }
@@ -84,9 +91,14 @@ main {
 .typing {
     font-size: clamp(20px, 4vw, 30px);
     min-height: 40px;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Cards */
+/* =========================================
+   CARDS
+========================================= */
 
 .card {
     background: rgba(255, 255, 255, 0.9);
@@ -100,14 +112,30 @@ main {
         0 15px 40px rgba(0, 0, 0, 0.15);
 
     backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .card h2 {
     color: #ff4f81;
     font-size: 32px;
+
+    text-shadow:
+        0 2px 8px rgba(255, 79, 129, 0.15);
 }
 
-/* Buttons */
+/* =========================================
+   BUTTONS
+========================================= */
 
 button {
     padding: 15px 28px;
@@ -117,11 +145,12 @@ button {
     border: none;
     border-radius: 30px;
 
-    background: linear-gradient(
-        45deg,
-        #ff4f81,
-        #ff758c
-    );
+    background:
+        linear-gradient(
+            45deg,
+            #ff4f81,
+            #ff758c
+        );
 
     color: white;
 
@@ -130,14 +159,25 @@ button {
     box-shadow:
         0 8px 20px rgba(255, 79, 129, 0.3);
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 button:hover {
     transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 12px 28px rgba(255, 79, 129, 0.45);
 }
 
-/* Countdown */
+button:active {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   COUNTDOWN
+========================================= */
 
 #countdown {
     display: flex;
@@ -147,10 +187,47 @@ button:hover {
 
     font-size: 28px;
     font-weight: bold;
+
     color: #ff4f81;
 }
 
-/* Gift */
+/* =========================================
+   GIFT SECTION
+========================================= */
+
+.gift-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+    Soft glowing circle behind the gift.
+*/
+
+.gift-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: 50%;
+    top: 55%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 117, 140, 0.22),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
 
 .gift {
     font-size: 120px;
@@ -159,54 +236,301 @@ button:hover {
 
     display: inline-block;
 
-    transition: 0.5s;
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+
+    filter:
+        drop-shadow(
+            0 10px 15px rgba(255, 79, 129, 0.25)
+        );
+
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+/*
+    Gentle floating animation before opening.
+*/
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
 }
 
 .gift:hover {
     transform: scale(1.15) rotate(5deg);
+
+    filter:
+        drop-shadow(
+            0 0 25px rgba(255, 79, 129, 0.7)
+        );
 }
 
+/*
+    Gift opening animation.
+*/
+
 .gift.open {
-    animation: giftOpen 1s forwards;
+    animation: giftOpen 1.2s ease forwards;
 }
 
 @keyframes giftOpen {
     0% {
-        transform: scale(1);
+        transform:
+            scale(1)
+            rotate(0deg);
+
+        filter:
+            drop-shadow(
+                0 10px 15px rgba(255, 79, 129, 0.25)
+            );
     }
 
-    50% {
-        transform: scale(1.5) rotate(15deg);
+    15% {
+        transform:
+            scale(1.15)
+            rotate(-8deg);
+    }
+
+    30% {
+        transform:
+            scale(1.3)
+            rotate(8deg);
+    }
+
+    45% {
+        transform:
+            scale(1.45)
+            rotate(-12deg);
+    }
+
+    60% {
+        transform:
+            scale(1.6)
+            rotate(12deg);
+
+        filter:
+            drop-shadow(
+                0 0 40px rgba(255, 215, 100, 1)
+            );
+    }
+
+    75% {
+        transform:
+            scale(1.4)
+            rotate(-8deg);
     }
 
     100% {
-        transform: scale(0);
+        transform:
+            scale(0)
+            rotate(25deg);
+
+        opacity: 0;
+
+        filter:
+            drop-shadow(
+                0 0 60px rgba(255, 255, 255, 1)
+            );
+    }
+}
+
+/*
+    Glow burst created when gift opens.
+*/
+
+.gift-burst {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 1),
+            rgba(255, 215, 100, 0.7),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: giftBurst 1s ease-out forwards;
+}
+
+@keyframes giftBurst {
+    0% {
+        width: 20px;
+        height: 20px;
+
+        opacity: 1;
+    }
+
+    100% {
+        width: 420px;
+        height: 420px;
+
         opacity: 0;
     }
 }
 
-/* Slideshow */
+/*
+    Surprise message.
+*/
+
+#giftMessage {
+    margin-top: 20px;
+
+    color: #ff4f81;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    min-height: 32px;
+
+    position: relative;
+    z-index: 3;
+}
+
+#giftMessage.revealed {
+    animation:
+        messageReveal 1s ease forwards;
+
+    font-weight: 600;
+}
+
+@keyframes messageReveal {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.8);
+    }
+
+    60% {
+        opacity: 1;
+
+        transform:
+            translateY(-5px)
+            scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================
+   FLOATING HEARTS / SPARKLES
+========================================= */
+
+.celebration-particle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    font-size: 25px;
+
+    animation:
+        celebrationFloat 2.5s ease-out forwards;
+}
+
+@keyframes celebrationFloat {
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5)
+            rotate(0deg);
+    }
+
+    30% {
+        opacity: 1;
+
+        transform:
+            translate(
+                var(--x),
+                -80px
+            )
+            scale(1.2)
+            rotate(90deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--x),
+                -260px
+            )
+            scale(0.7)
+            rotate(360deg);
+    }
+}
+
+/* =========================================
+   SLIDESHOW
+========================================= */
 
 .slideshow {
     position: relative;
 
     max-width: 700px;
+
     margin: auto;
 
     overflow: hidden;
 
     border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .slideshow img {
     width: 100%;
+
     height: 450px;
 
     object-fit: cover;
 
     display: block;
 
-    transition: opacity 0.5s;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.slideshow:hover img {
+    transform: scale(1.02);
 }
 
 .prev,
@@ -219,7 +543,17 @@ button:hover {
 
     padding: 12px 18px;
 
-    background: rgba(0, 0, 0, 0.5);
+    background:
+        rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(5px);
+}
+
+.prev:hover,
+.next:hover {
+    transform:
+        translateY(-50%)
+        scale(1.08);
 }
 
 .prev {
@@ -234,10 +568,15 @@ button:hover {
     margin-top: 15px;
 
     font-size: 20px;
+
     color: #ff4f81;
+
+    min-height: 30px;
 }
 
-/* Video */
+/* =========================================
+   VIDEO
+========================================= */
 
 .video-container {
     position: relative;
@@ -251,6 +590,9 @@ button:hover {
     overflow: hidden;
 
     border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .video-container iframe {
@@ -265,7 +607,9 @@ button:hover {
     border: none;
 }
 
-/* Timeline */
+/* =========================================
+   TIMELINE
+========================================= */
 
 .timeline {
     position: relative;
@@ -287,7 +631,12 @@ button:hover {
 
     width: 4px;
 
-    background: #ff758c;
+    background:
+        linear-gradient(
+            to bottom,
+            #ff4f81,
+            #ffb6c9
+        );
 
     transform: translateX(-50%);
 }
@@ -317,7 +666,15 @@ button:hover {
 
     border-radius: 15px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.1);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.timeline-item > div:last-child:hover {
+    transform: scale(1.03);
 }
 
 .timeline-dot {
@@ -329,6 +686,7 @@ button:hover {
     background: #ff4f81;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -337,9 +695,32 @@ button:hover {
     flex-shrink: 0;
 
     z-index: 2;
+
+    box-shadow:
+        0 0 0 5px rgba(255, 79, 129, 0.15),
+        0 0 20px rgba(255, 79, 129, 0.4);
+
+    animation:
+        timelinePulse 2s infinite;
 }
 
-/* Letter */
+@keyframes timelinePulse {
+    0%, 100% {
+        box-shadow:
+            0 0 0 5px rgba(255, 79, 129, 0.15),
+            0 0 20px rgba(255, 79, 129, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(255, 79, 129, 0.08),
+            0 0 30px rgba(255, 79, 129, 0.5);
+    }
+}
+
+/* =========================================
+   LETTER
+========================================= */
 
 .letter {
     text-align: left;
@@ -353,7 +734,13 @@ button:hover {
     text-align: center;
 }
 
-/* Balloons */
+.letter p {
+    margin-bottom: 22px;
+}
+
+/* =========================================
+   BALLOONS
+========================================= */
 
 .balloons span {
     position: fixed;
@@ -364,7 +751,8 @@ button:hover {
 
     z-index: 5;
 
-    animation: floatBalloon 12s linear infinite;
+    animation:
+        floatBalloon 12s linear infinite;
 
     pointer-events: none;
 }
@@ -396,7 +784,10 @@ button:hover {
 
 @keyframes floatBalloon {
     0% {
-        transform: translateY(0) rotate(-5deg);
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
         opacity: 0;
     }
 
@@ -405,16 +796,23 @@ button:hover {
     }
 
     50% {
-        transform: translateY(-60vh) rotate(5deg);
+        transform:
+            translateY(-60vh)
+            rotate(5deg);
     }
 
     100% {
-        transform: translateY(-120vh) rotate(-5deg);
+        transform:
+            translateY(-120vh)
+            rotate(-5deg);
+
         opacity: 0;
     }
 }
 
-/* Sparkles */
+/* =========================================
+   SPARKLES
+========================================= */
 
 .sparkles {
     position: fixed;
@@ -430,7 +828,8 @@ button:hover {
 
     pointer-events: none;
 
-    animation: sparkle 2s infinite alternate;
+    animation:
+        sparkle 2s infinite alternate;
 
     z-index: 4;
 }
@@ -438,16 +837,20 @@ button:hover {
 @keyframes sparkle {
     from {
         opacity: 0.3;
+
         transform: scale(0.9);
     }
 
     to {
         opacity: 1;
+
         transform: scale(1.1);
     }
 }
 
-/* Fireworks */
+/* =========================================
+   FIREWORKS
+========================================= */
 
 #fireworks {
     position: fixed;
@@ -459,7 +862,9 @@ button:hover {
     z-index: 100;
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -471,8 +876,16 @@ button:hover {
         min-height: 80vh;
     }
 
+    .hero h1 {
+        font-size: clamp(38px, 12vw, 60px);
+    }
+
     .card {
         padding: 25px 15px;
+    }
+
+    .card h2 {
+        font-size: 27px;
     }
 
     .slideshow img {
@@ -490,6 +903,7 @@ button:hover {
     .timeline-item,
     .timeline-item:nth-child(even) {
         flex-direction: row;
+
         align-items: flex-start;
     }
 
@@ -500,6 +914,7 @@ button:hover {
 
     .timeline-item > div:last-child {
         width: calc(100% - 75px);
+
         text-align: left;
     }
 
@@ -513,6 +928,33 @@ button:hover {
 
     .sparkles {
         letter-spacing: 10px;
+
         font-size: 18px;
+    }
+
+    #giftMessage {
+        font-size: 17px;
+
+        padding: 0 10px;
+    }
+
+    .gift-burst {
+        max-width: 90vw;
+        max-height: 90vw;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
     }
 }

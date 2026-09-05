@@ -1,150 +1,337 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Zara! 🎂</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="theme-color" content="#ff758c"> <title>Happy Birthday Zara! 🎂</title> <link rel="stylesheet" href="style.css"> </head> <body>
+<!-- Floating balloons -->
+<div class="balloons" aria-hidden="true">
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+</div>
 
-<body>
+<!-- Sparkles -->
+<div class="sparkles" aria-hidden="true">
+    ✨ ✨ ✨ ✨ ✨
+</div>
 
-    <!-- Floating balloons -->
-    <div class="balloons">
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-    </div>
+<main>
 
-    <!-- Sparkles -->
-    <div class="sparkles">✨ ✨ ✨ ✨ ✨</div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
 
-    <main>
+            <div class="small-badge">
+                ✨ A little something for you ✨
+            </div>
 
-        <!-- Hero -->
-        <section class="hero">
             <h1>🎉 Happy Birthday, Zara! 🎂</h1>
 
             <p class="typing" id="typing"></p>
 
-            <button onclick="startCelebration()">
+            <button
+                class="celebrate-button"
+                onclick="startCelebration()">
                 🎁 Open Your Surprise
             </button>
-        </section>
 
-        <!-- Countdown -->
-        <section class="card">
-            <h2>🎂 Birthday Countdown</h2>
-            <div id="countdown">
-                Loading...
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Gift -->
-        <section class="card gift-section">
-            <h2>🎁 A Special Gift</h2>
 
-            <div class="gift" id="gift" onclick="openGift()">
+    <!-- Countdown -->
+    <section class="card">
+
+        <div class="section-icon">⏳</div>
+
+        <h2>🎂 Birthday Countdown</h2>
+
+        <div id="countdown">
+            Loading...
+        </div>
+
+    </section>
+
+
+    <!-- Gift -->
+    <section class="card gift-section">
+
+        <div class="section-icon">💝</div>
+
+        <h2>🎁 A Special Gift</h2>
+
+        <p class="gift-intro">
+            There's something waiting for you...
+        </p>
+
+        <div
+            class="gift-wrapper"
+            id="giftWrapper"
+            onclick="openGift()"
+            role="button"
+            tabindex="0"
+            aria-label="Open your birthday gift">
+
+            <div class="gift-glow"></div>
+
+            <div class="gift" id="gift">
                 🎁
             </div>
 
-            <p id="giftMessage">
-                Tap the gift!
+        </div>
+
+        <p class="gift-hint" id="giftHint">
+            👆 Tap the gift to open it
+        </p>
+
+        <!-- Hidden until gift is opened -->
+        <div
+            class="gift-message"
+            id="giftMessage"
+            aria-live="polite">
+
+            <div class="message-sparkles">
+                ✨ 💖 ✨
+            </div>
+
+            <p>
+                🎉 Just a little surprise, because you deserve
+                nothing less than all the happiness in the world. 🤍
             </p>
-        </section>
 
-        <!-- Photo slideshow -->
-        <section class="card">
-            <h2>📷 Beautiful Memories</h2>
-
-            <div class="slideshow">
-                <img id="slideImage"
-                     src="images/photo1.jpg"
-                     alt="Birthday memory">
-
-                <button class="prev" onclick="previousSlide()">❮</button>
-                <button class="next" onclick="nextSlide()">❯</button>
+            <div class="message-hearts">
+                ♡ ♥ ♡ ♥ ♡
             </div>
 
-            <div id="slideCaption">
-                Beautiful memory 🤍
-            </div>
-        </section>
+        </div>
 
-        <!-- Video -->
-        <section class="card">
-            <h2>🎥 Birthday Video</h2>
+    </section>
 
-            <div class="video-container">
-                <iframe
-					src="https://www.youtube.com/embed/28eF7dKN91g"
-					title="Birthday video"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen>
-				</iframe>
-            </div>
-        </section>
 
-        <!-- Music -->
-        <section class="card">
-            <h2>🎵 Birthday Music</h2>
+    <!-- Photo slideshow -->
+    <section class="card">
 
-            <audio id="birthdayMusic" loop>
-                <source src="images/birthday-music.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
+        <div class="section-icon">📸</div>
 
-            <button onclick="toggleMusic()" id="musicButton">
-                ▶️ Play Music
+        <h2>📷 Beautiful Memories</h2>
+
+        <p class="section-subtitle">
+            A few moments worth remembering 🤍
+        </p>
+
+        <div class="slideshow">
+
+            <img
+                id="slideImage"
+                src="images/Photo1.jpg"
+                alt="Birthday memory">
+
+            <div class="slide-overlay"></div>
+
+            <button
+                class="prev"
+                onclick="previousSlide()"
+                aria-label="Previous photo">
+                ❮
             </button>
-        </section>
 
-        <!-- Timeline -->
-        <section class="card timeline-section">
-            <h2>📜 Our Memories</h2>
+            <button
+                class="next"
+                onclick="nextSlide()"
+                aria-label="Next photo">
+                ❯
+            </button>
 
-            <div class="timeline">
+        </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">🤍</div>
-                    <div>
-                        <h3>Feb 2026</h3>
-                        <p>The beginning of a beautiful memory.</p>
-                    </div>
+        <div id="slideCaption">
+            The Girl Who Makes Everything Brighter ✨
+        </div>
+
+        <div
+            class="slide-dots"
+            id="slideDots">
+        </div>
+
+    </section>
+
+
+    <!-- Video -->
+    <section class="card">
+
+        <div class="section-icon">🎥</div>
+
+        <h2>🎥 Birthday Video</h2>
+
+        <p class="section-subtitle">
+            Because some memories deserve a little replay 💕
+        </p>
+
+        <div class="video-container">
+
+            <iframe
+                src="https://www.youtube.com/embed/28eF7dKN91g"
+                title="Birthday video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+    <!-- Music -->
+    <section class="card music-section">
+
+        <div class="section-icon">🎵</div>
+
+        <h2>🎵 Birthday Music</h2>
+
+        <p class="section-subtitle">
+            Press play and let the celebration begin ✨
+        </p>
+
+        <audio id="birthdayMusic" loop>
+            <source
+                src="images/birthday-music.mp3"
+                type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <button
+            onclick="toggleMusic()"
+            id="musicButton"
+            class="music-button">
+            ▶️ Play Music
+        </button>
+
+        <div
+            id="musicStatus"
+            class="music-status">
+            🎶
+        </div>
+
+    </section>
+
+
+    <!-- Timeline -->
+    <section class="card timeline-section">
+
+        <div class="section-icon">📜</div>
+
+        <h2>📜 Our Memories</h2>
+
+        <p class="section-subtitle">
+            Little moments that became beautiful memories.
+        </p>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    🤍
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">✨</div>
-                    <div>
-                        <h3>March 2026</h3>
-                        <p>So many wonderful moments together.</p>
-                    </div>
-                </div>
+                <div class="timeline-content">
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">🎉</div>
-                    <div>
-                        <h3>April 2026</h3>
-                        <p>Another month filled with happiness.</p>
-                    </div>
-                </div>
+                    <span class="timeline-number">
+                        01
+                    </span>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot">🎂</div>
-                    <div>
-                        <h3>May 2026</h3>
-                        <p>Lots of wishes...!</p>
-                    </div>
+                    <h3>Feb 2026</h3>
+
+                    <p>
+                        The beginning of a beautiful memory.
+                    </p>
+
                 </div>
 
             </div>
-        </section>
 
-        <!-- Letter -->
-        <section class="card letter">
-            <h2>💌 A Letter For You</h2>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ✨
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-number">
+                        02
+                    </span>
+
+                    <h3>March 2026</h3>
+
+                    <p>
+                        So many wonderful moments together.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    🎉
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-number">
+                        03
+                    </span>
+
+                    <h3>April 2026</h3>
+
+                    <p>
+                        Another month filled with happiness.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    🎂
+                </div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-number">
+                        04
+                    </span>
+
+                    <h3>May 2026</h3>
+
+                    <p>
+                        Lots of wishes... and even more memories.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Letter -->
+    <section class="card letter">
+
+        <div class="letter-decoration">
+            💌
+        </div>
+
+        <h2>💌 A Letter For You</h2>
+
+        <div class="letter-content">
 
             <p>
                 Princess Zara,
@@ -153,40 +340,68 @@
             <p>
                 Today is all about celebrating you. You bring so much
                 happiness, kindness, and laughter into the lives of
-                everyone around you. 
+                everyone around you.
             </p>
 
-			 <p>
-				You are kind, caring, and fun-loving. 
-				I hope every day brings you more joy and laughter.
+            <p>
+                You are kind, caring, and fun-loving.
+                I hope every day brings you more joy and laughter.
             </p>
 
             <p>
                 I hope this birthday brings you beautiful memories,
-                exciting adventures, and everything you've been wishing for.
+                exciting adventures, and everything you've been
+                wishing for.
             </p>
 
             <p>
                 Never stop being the wonderful person you are.
             </p>
 
-            <p>
-                Happy Birthday! May you have many many more... 🤍🎂
+            <p class="final-wish">
+                Happy Birthday! May you have many, many more... 🤍🎂
             </p>
 
-            <p>
+            <p class="signature">
                 With lots of best wishes,
                 <br>
-                Rah chlta musafir 
+                <span>Rah chlta musafir</span>
             </p>
-        </section>
 
-    </main>
+        </div>
 
-    <!-- Fireworks canvas -->
-    <canvas id="fireworks"></canvas>
+    </section>
 
-    <script src="script.js"></script>
 
-</body>
-</html>
+    <!-- Final message -->
+    <section class="final-message">
+
+        <div>✨</div>
+
+        <p>
+            Here's to another beautiful chapter. 🤍
+        </p>
+
+        <span>
+            Happy Birthday, Zara! 🎂
+        </span>
+
+    </section>
+
+</main>
+
+
+<!-- Fireworks -->
+<canvas id="fireworks"></canvas>
+
+<!-- Hearts created by JavaScript -->
+<div
+    id="heartContainer"
+    class="heart-container"
+    aria-hidden="true">
+</div>
+
+
+<script src="script.js"></script>
+
+</body> </html>
