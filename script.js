@@ -36,7 +36,7 @@ typeText();
 
 // Change this date if needed.
 const birthdayDate =
-    new Date("September 07, 2026 20:00:00").getTime();
+    new Date("October 17, 2026 20:00:00").getTime();
 
 function updateCountdown() {
 
@@ -56,7 +56,7 @@ function updateCountdown() {
     if (difference <= 0) {
 
         countdown.innerHTML =
-            "🎉 HAPPY BIRTHDAY! 🎉🎂🤍";
+            "🎉 HAPPY BIRTHDAY! 🎉🎂💜 ";
 
         return;
     }
@@ -170,7 +170,7 @@ function openGift() {
     setTimeout(() => {
 
         giftMessage.innerHTML =
-            "🎉 Just a little surprise, because you deserve nothing less than all the happiness in the world. 🤍";
+            "🎉 Just a little surprise, because you deserve nothing less than all the happiness in the world. 💜 ";
 
         giftMessage.classList.add("revealed");
 
@@ -234,7 +234,7 @@ function createCelebrationParticles() {
         "✨",
         "💖",
         "💕",
-        "🤍",
+        "💜",
         "🌸",
         "⭐",
         "💫",
@@ -449,28 +449,28 @@ const photos = [
         src: "images/Photo1.jpg",
 
         caption:
-            "The Girl Who Makes Everything Brighter ✨"
+            " To Life Long Friendship  ✨"
     },
 
     {
         src: "images/Photo2.jpg",
 
         caption:
-            "Virgo Queen 👑"
+            " To The Beautiful Soul👑"
     },
 
     {
         src: "images/Photo3.jpg",
 
         caption:
-            "One of a Kind, The Beautiful Soul Behind That Tough Exterior 💎"
+            "One of a Kind, The Beautiful And Poetic Soul 💎"
     },
 
     {
         src: "images/Photo4.jpg",
 
         caption:
-            "My King My Love 💖"
+            "Warm wishes To My Best Friend Ever💖"
     }
 
 ];
