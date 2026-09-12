@@ -3,7 +3,7 @@
 ========================================= */
 
 const typingText =
-    "May your journey ahead be as beautiful, extraordinary, and unforgettable as you are 🎂🤍";
+    "May your journey ahead be as beautiful, extraordinary, and unforgettable as you are ameen 🎂💖";
 
 let typingIndex = 0;
 
@@ -36,7 +36,7 @@ typeText();
 
 // Change this date if needed.
 const birthdayDate =
-    new Date("October 17, 2026 20:00:00").getTime();
+    new Date("September 17, 2026 20:00:00").getTime();
 
 function updateCountdown() {
 
@@ -56,7 +56,7 @@ function updateCountdown() {
     if (difference <= 0) {
 
         countdown.innerHTML =
-            "🎉 HAPPY BIRTHDAY! 🎉🎂💜 ";
+            "🎉 HAPPY BIRTHDAY! 🎉🎂💖 ";
 
         return;
     }
@@ -449,28 +449,28 @@ const photos = [
         src: "images/Photo1.jpg",
 
         caption:
-            " To Life Long Friendship  ✨"
+            " A tiny miracle has arrived, bringing a lifetime of love into our hearts  💖✨"
     },
 
     {
         src: "images/Photo2.jpg",
 
         caption:
-            " To The Beautiful Soul👑"
+            " You may be small, but you have filled our world with a love bigger than words💕💕💕"
     },
 
     {
         src: "images/Photo3.jpg",
 
         caption:
-            "One of a Kind, The Beautiful And Poetic Soul 💎"
+            "In your tiny heartbeat, we found a thousand reasons to smile.🥳🥳🥳"
     },
 
     {
         src: "images/Photo4.jpg",
 
         caption:
-            "Warm wishes To My Best Friend Ever💖"
+            "Those little fingers and tiny toes have captured our hearts forever.💖💖"
     }
 
 ];

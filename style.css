@@ -1,4 +1,3 @@
-```css
 * {
     box-sizing: border-box;
 }
@@ -11,21 +10,20 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    color: #333;
+    color: #4a2635;
 
     /*
-        Soft elegant blue → purple background.
-        Dark enough to feel rich,
-        but light enough to remain comfortable.
+        BRIGHT PINK BIRTHDAY THEME
+        Vibrant, warm and elegant.
     */
     background:
         linear-gradient(
             135deg,
-            #314a78,
-            #4c5f91,
-            #66558f,
-            #405d86,
-            #344d78
+            #f7a8c4,
+            #f477a8,
+            #f9b6ce,
+            #e85d91,
+            #f8a9c4
         );
 
     background-size: 400% 400%;
@@ -52,7 +50,7 @@ body {
     }
 }
 
-/* Soft atmospheric glow over the background */
+/* Bright soft atmospheric glow */
 
 body::before {
     content: "";
@@ -64,13 +62,18 @@ body::before {
 
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(132, 167, 255, 0.16),
-            transparent 35%
+            circle at 10% 15%,
+            rgba(255, 255, 255, 0.35),
+            transparent 32%
         ),
         radial-gradient(
-            circle at 85% 75%,
-            rgba(190, 145, 255, 0.14),
+            circle at 90% 20%,
+            rgba(255, 210, 225, 0.30),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 255, 255, 0.18),
             transparent 35%
         );
 
@@ -103,8 +106,9 @@ main {
     font-size: clamp(40px, 8vw, 75px);
 
     text-shadow:
-        0 0 10px rgba(255, 117, 170, 0.65),
-        0 0 25px rgba(145, 125, 255, 0.35);
+        0 0 10px rgba(255, 255, 255, 0.65),
+        0 0 25px rgba(210, 40, 100, 0.35),
+        0 5px 20px rgba(120, 25, 60, 0.20);
 
     animation: heartbeat 2s infinite;
 }
@@ -123,8 +127,10 @@ main {
     font-size: clamp(20px, 4vw, 30px);
     min-height: 40px;
 
+    color: white;
+
     text-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.25);
+        0 2px 12px rgba(100, 25, 55, 0.28);
 }
 
 /* =========================================
@@ -133,15 +139,18 @@ main {
 
 .card {
     background:
-        rgba(255, 255, 255, 0.93);
+        rgba(255, 250, 252, 0.96);
 
     margin: 30px 0;
     padding: 35px 25px;
 
     border-radius: 25px;
 
+    border:
+        1px solid rgba(255, 255, 255, 0.75);
+
     box-shadow:
-        0 15px 40px rgba(15, 25, 60, 0.25);
+        0 15px 40px rgba(125, 35, 70, 0.20);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -155,15 +164,16 @@ main {
     transform: translateY(-4px);
 
     box-shadow:
-        0 20px 50px rgba(15, 25, 60, 0.32);
+        0 20px 50px rgba(125, 35, 70, 0.28);
 }
 
 .card h2 {
-    color: #7556a8;
+    color: #e05287;
+
     font-size: 32px;
 
     text-shadow:
-        0 2px 8px rgba(117, 86, 168, 0.18);
+        0 2px 8px rgba(224, 82, 135, 0.20);
 }
 
 /* =========================================
@@ -181,8 +191,9 @@ button {
     background:
         linear-gradient(
             45deg,
-            #7657a8,
-            #607fc4
+            #e85d91,
+            #f477a8,
+            #ee6b9b
         );
 
     color: white;
@@ -190,7 +201,7 @@ button {
     cursor: pointer;
 
     box-shadow:
-        0 8px 20px rgba(67, 80, 150, 0.3);
+        0 8px 20px rgba(205, 55, 105, 0.35);
 
     transition:
         transform 0.3s ease,
@@ -198,10 +209,12 @@ button {
 }
 
 button:hover {
-    transform: translateY(-3px) scale(1.05);
+    transform:
+        translateY(-3px)
+        scale(1.05);
 
     box-shadow:
-        0 12px 28px rgba(67, 80, 150, 0.42);
+        0 12px 28px rgba(205, 55, 105, 0.48);
 }
 
 button:active {
@@ -221,7 +234,7 @@ button:active {
     font-size: 28px;
     font-weight: bold;
 
-    color: #7556a8;
+    color: #dc4f83;
 }
 
 /* =========================================
@@ -234,7 +247,7 @@ button:active {
 }
 
 /*
-    Soft blue-purple glow behind the gift.
+    Bright pink glow behind the gift.
 */
 
 .gift-section::before {
@@ -242,19 +255,20 @@ button:active {
 
     position: absolute;
 
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
 
     left: 50%;
     top: 55%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     background:
         radial-gradient(
             circle,
-            rgba(113, 137, 220, 0.20),
-            rgba(164, 121, 214, 0.10),
+            rgba(255, 108, 160, 0.32),
+            rgba(255, 190, 215, 0.22),
             transparent 70%
         );
 
@@ -280,28 +294,35 @@ button:active {
 
     filter:
         drop-shadow(
-            0 10px 15px rgba(83, 78, 150, 0.28)
+            0 10px 15px rgba(175, 45, 90, 0.25)
         );
 
-    animation: giftFloat 2.5s ease-in-out infinite;
+    animation:
+        giftFloat 2.5s ease-in-out infinite;
 }
 
 @keyframes giftFloat {
     0%, 100% {
-        transform: translateY(0) rotate(-2deg);
+        transform:
+            translateY(0)
+            rotate(-2deg);
     }
 
     50% {
-        transform: translateY(-10px) rotate(2deg);
+        transform:
+            translateY(-10px)
+            rotate(2deg);
     }
 }
 
 .gift:hover {
-    transform: scale(1.15) rotate(5deg);
+    transform:
+        scale(1.15)
+        rotate(5deg);
 
     filter:
         drop-shadow(
-            0 0 25px rgba(145, 155, 255, 0.7)
+            0 0 25px rgba(255, 90, 150, 0.85)
         );
 }
 
@@ -310,7 +331,8 @@ button:active {
 ========================================= */
 
 .gift.open {
-    animation: giftOpen 1.2s ease forwards;
+    animation:
+        giftOpen 1.2s ease forwards;
 }
 
 @keyframes giftOpen {
@@ -321,7 +343,7 @@ button:active {
 
         filter:
             drop-shadow(
-                0 10px 15px rgba(83, 78, 150, 0.28)
+                0 10px 15px rgba(175, 45, 90, 0.25)
             );
     }
 
@@ -350,7 +372,7 @@ button:active {
 
         filter:
             drop-shadow(
-                0 0 40px rgba(196, 183, 255, 0.9)
+                0 0 40px rgba(255, 170, 205, 0.95)
             );
     }
 
@@ -369,7 +391,7 @@ button:active {
 
         filter:
             drop-shadow(
-                0 0 60px rgba(255, 255, 255, 0.9)
+                0 0 60px rgba(255, 255, 255, 1)
             );
     }
 }
@@ -387,15 +409,16 @@ button:active {
     width: 40px;
     height: 40px;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255, 255, 255, 0.95),
-            rgba(176, 164, 255, 0.65),
+            rgba(255, 255, 255, 1),
+            rgba(255, 100, 160, 0.80),
             transparent 70%
         );
 
@@ -403,7 +426,8 @@ button:active {
 
     z-index: 1;
 
-    animation: giftBurst 1s ease-out forwards;
+    animation:
+        giftBurst 1s ease-out forwards;
 }
 
 @keyframes giftBurst {
@@ -427,7 +451,7 @@ button:active {
 #giftMessage {
     margin-top: 20px;
 
-    color: #7556a8;
+    color: #dc4f83;
 
     font-size: 19px;
 
@@ -540,7 +564,7 @@ button:active {
     border-radius: 20px;
 
     box-shadow:
-        0 10px 30px rgba(15, 25, 60, 0.25);
+        0 10px 30px rgba(125, 35, 70, 0.22);
 }
 
 .slideshow img {
@@ -567,12 +591,13 @@ button:active {
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     padding: 12px 18px;
 
     background:
-        rgba(35, 45, 85, 0.55);
+        rgba(210, 55, 105, 0.68);
 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -598,7 +623,7 @@ button:active {
 
     font-size: 20px;
 
-    color: #7556a8;
+    color: #dc4f83;
 
     min-height: 30px;
 }
@@ -621,7 +646,7 @@ button:active {
     border-radius: 20px;
 
     box-shadow:
-        0 10px 30px rgba(15, 25, 60, 0.25);
+        0 10px 30px rgba(125, 35, 70, 0.22);
 }
 
 .video-container iframe {
@@ -663,11 +688,12 @@ button:active {
     background:
         linear-gradient(
             to bottom,
-            #7189d8,
-            #9674ba
+            #f477a8,
+            #e05287
         );
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .timeline-item {
@@ -689,21 +715,23 @@ button:active {
 .timeline-item > div:last-child {
     width: 45%;
 
-    background: #fff;
+    background:
+        #fff8fb;
 
     padding: 15px;
 
     border-radius: 15px;
 
     box-shadow:
-        0 5px 20px rgba(15, 25, 60, 0.12);
+        0 5px 20px rgba(125, 35, 70, 0.14);
 
     transition:
         transform 0.3s ease;
 }
 
 .timeline-item > div:last-child:hover {
-    transform: scale(1.03);
+    transform:
+        scale(1.03);
 }
 
 .timeline-dot {
@@ -715,8 +743,8 @@ button:active {
     background:
         linear-gradient(
             135deg,
-            #7189d8,
-            #8968ae
+            #f477a8,
+            #e05287
         );
 
     display: flex;
@@ -731,8 +759,8 @@ button:active {
     z-index: 2;
 
     box-shadow:
-        0 0 0 5px rgba(113, 137, 216, 0.15),
-        0 0 20px rgba(113, 137, 216, 0.35);
+        0 0 0 5px rgba(244, 119, 168, 0.18),
+        0 0 20px rgba(224, 82, 135, 0.35);
 
     animation:
         timelinePulse 2s infinite;
@@ -741,14 +769,14 @@ button:active {
 @keyframes timelinePulse {
     0%, 100% {
         box-shadow:
-            0 0 0 5px rgba(113, 137, 216, 0.15),
-            0 0 20px rgba(113, 137, 216, 0.3);
+            0 0 0 5px rgba(244, 119, 168, 0.18),
+            0 0 20px rgba(224, 82, 135, 0.32);
     }
 
     50% {
         box-shadow:
-            0 0 0 10px rgba(113, 137, 216, 0.08),
-            0 0 30px rgba(145, 115, 200, 0.45);
+            0 0 0 10px rgba(244, 119, 168, 0.10),
+            0 0 30px rgba(224, 82, 135, 0.48);
     }
 }
 
@@ -911,7 +939,8 @@ button:active {
     }
 
     .hero h1 {
-        font-size: clamp(38px, 12vw, 60px);
+        font-size:
+            clamp(38px, 12vw, 60px);
     }
 
     .card {
